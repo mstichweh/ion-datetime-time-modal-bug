@@ -9,7 +9,11 @@
     <ion-card-content>
       When the time selector is toggeled some times by clicking on the text
       fields or buttons, it shows "00:00" from time to time. In this case a new
-      selected value is not submitted when pressing the "done" button.
+      selected value is not submitted when pressing the "done" button.<br />
+      <i
+        >The issue seems to occure more often with enabled Chrome developer
+        tools in mobile mode.</i
+      >
     </ion-card-content>
   </ion-card>
 
@@ -42,7 +46,6 @@
   <ion-modal
     #popup
     trigger="trigger"
-    (ionModalDidDismiss)="onClosePopup()"
     [showBackdrop]="true"
     [breakpoints]="[0, 0.3]"
     [initialBreakpoint]="0.3"
@@ -53,7 +56,6 @@
         <ion-datetime
           [value]="timeValue"
           (ionChange)="onChange($event)"
-          [minuteValues]="[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]"
           [firstDayOfWeek]="1"
           [showDefaultButtons]="true"
           [presentation]="'time'"
